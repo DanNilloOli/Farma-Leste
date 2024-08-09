@@ -38,16 +38,16 @@ export class CategoriaService {
         return await this.CategoriaRepository.save(Categoria);
     }
 
-    async update(categoria: Categoria): Promise<Categoria> {
-        let buscaCategoria: Categoria = await this.findById(categoria.id);
+    async update(Categoria: Categoria): Promise<Categoria> {
+        let buscaCategoria: Categoria = await this.findById(Categoria.id);
 
-        if (!buscaCategoria || !categoria.id)
+        if (!buscaCategoria || !Categoria.id)
             throw new HttpException(
                 'Opa... Categoria não encontrada!',
                 HttpStatus.NOT_FOUND,
             );
 
-        return await this.CategoriaRepository.save(categoria);
+        return await this.CategoriaRepository.save(Categoria);
   }
 
     async delete(id: number): Promise<DeleteResult> {

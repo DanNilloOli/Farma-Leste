@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Categoria } from './categoria/entities/categoria.entity';
 import { Produto } from './produto/entities/produto.entities';
-import { produtoModule } from './produto/entities/Produto.module';
-import { categoriaModule } from './categoria/entities/Categoria.module';
+import { CategoriaModule } from './categoria/entities/Categoria.module';
+import { ProdutoModule } from './produto/entities/Produto.module';
 
 @Module({
   imports: [
@@ -17,8 +17,8 @@ import { categoriaModule } from './categoria/entities/Categoria.module';
       entities: [Categoria, Produto],
       synchronize: true,
     }),
-    categoriaModule,
-    produtoModule,
+    CategoriaModule,
+    ProdutoModule,
   ],
   controllers: [],
   providers: [],
